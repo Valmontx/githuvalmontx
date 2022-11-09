@@ -10,7 +10,7 @@ const validator = {
       let currentNum = parseInt(cardNumber[i]);
 
 
-      if ((i + 2) % 2 !== 0) //posicion par
+      if ((i + 2) % 2 == 0) //posicion par
         if ((currentNum *= 2) > 9)
           currentNum -= 9;
       contar += currentNum;
@@ -43,6 +43,6 @@ const validator = {
 
 };
 //4551038290138341 visa 
-//5261 4850 5361 4216  mastercard
+//5261485053614216  mastercard
 
 export default validator;
