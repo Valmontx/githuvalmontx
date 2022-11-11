@@ -8,32 +8,32 @@ const modal =
 btnAbrirModal.addEventListener("click", () => {
     modal.showModal();
 
-    let verifica = document.getElementById('btnValidate');
+let verifica = document.getElementById('btnValidate');
+    
 
-
-    verifica.addEventListener("click", () => {
-
+        verifica.addEventListener("click", () => {
+        // let message="";
         let newNum = document.getElementById('cardNumber').value;
-        //  console.log(newNum, '<<< new num')
-             // alert('Completar los datos')
+        let validation = document.getElementById('validar');
         
-          if (validator.isValid(newNum) === true) {
+        
+        if (validator.isValid(newNum) === true) {
+            //  message = "Su tarjeta es valida :)"
+           alert('Su tarjeta '  + validator.maskify(newNum) + ' es valida :)')
 
-            alert('Su tarjeta es Valida :)')
-                       
         } else {
 
-            alert('Su tarjeta no es Valida :(')
+            alert('Su tarjeta NO es valida, intente de nuevo :(')
+
+            //message= "su tarjeta es invalida :("
         }
+
+        // validation.textContent= message;
+        validation.textContent = validator.maskify(newNum);
+        
     })
 
-    //  const newNum = document.getElementById("cardNumber");
-    // oculta.addEventListener("click", () => {         
 
-    //  validator.maskify(newNum.value);
-    // console.log(oculta);
-
-    // })
 });
 
 
